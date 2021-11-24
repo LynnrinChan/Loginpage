@@ -87,8 +87,23 @@ body {
     margin-left: 14%;
 }
 .warning {
+    margin-left: 14%;
+    margin-right: 14%;
     color: red;
 }
 .success {
     color: green;
+}
+.forgetpassword {
+    color: grey;
+    margin-top: 5%;
+    margin-left: 13%;
+    border: transparent;
+    background: none;
+}
+.copyright {
+    color: grey;
+    margin-top: 40%;
+    background: none;
+    font-size: xx-small;
 }

@@ -13,10 +13,59 @@
 </head>
 <body>
     <div class="login" id="login">
-        <input type="text" placeholder="用户名" class="input">
-        <input type="password" placeholder="密码" class="input">
-        <button class="submit">登录</button>
+        <input type="text" placeholder="邮箱" class="input" @change="checkusername" v-model="username">
+        <p class="warning" v-if="usernameerror === 1">邮箱格式错误</p>
+        <input type="password" placeholder="密码" class="input" @change="checkpassword" v-model="password">
+        <p class="warning" v-if="passworderror === 1">密码格式错误，要求以字母开头，长度在6~18之间，只能包含字母、数字和下划线</p>
+        <p class="warning" v-if="loginstatus === 0">邮箱或密码错误</p>
+        <button class="forgetpassword" v-on:click="forget">忘记密码</button>
+        <button class="submit" v-on:click="check">登录</button>
     </div>
 </body>
+<footer>
+    <p class="copyright">© Copyright 软件2005-第八小组</p>
+</footer>
 <script src="js/vue.js"></script>
+<script>
+    var vue = new Vue({
+        el: "#login",
+        data: {
+                username: "",
+                password: "",
+                loginstatus: "",
+                usernameerror: "",
+                passworderror: "",
+        },
+        methods: {
+            check: function(){
+                if(this.username=="baolong24@baolong24.moe"){
+                    if(this.password=="123456"){
+                        window.location = "./logindone.html"
+                    }
+                    else
+                    this.loginstatus=0
+                }
+                else
+                    this.loginstatus=0
+            },
+            checkusername: function(){
+                check = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                if (!check.test(this.username))
+                    this.usernameerror=1
+                else
+                    this.usernameerror=0
+            },
+            checkpassword: function(){
+                check = /[^[a-zA-Z]\w{5,17}$]/
+                if (!check.test(this.password))
+                    this.passworderror=1
+                else
+                    this.passworderror=0
+            },
+            forget: function(){
+                alert("密码是: windows7")
+            }
+        },
+    })
+</script>
 </html>
