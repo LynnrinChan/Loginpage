@@ -38,7 +38,7 @@ body {
     height: 200px;
     max-width: 768px;
     min-width: 320px;
-    background: url(../images/1.png) no-repeat;
+    background: url(../image/1.png) no-repeat;
     background-size: 100% 100%;
 }
 .earth {
@@ -47,10 +47,10 @@ body {
 }
 .head span {
     font-size: 16px;
-    color: #fff;
+    color: black;
 }
 /* 主体部分 */
-.main {
+.login {
     width: 100%;
     height: 400px;
     background-color: #fff;
@@ -58,7 +58,7 @@ body {
     min-width: 320px;
     margin-top: 15px;
 }
-.main input {
+.login input {
     margin-left: 14%;
     width: 70%;
     line-height: 50px;
@@ -67,13 +67,13 @@ body {
     outline: none;
     border-bottom: 1px solid #ddd;
 }
-.main a {
+.login a {
     display: block;
     font-size: 12px;
     margin-top: 30px;
     margin-left: 14%;
 }
-.main .submit {
+.login .submit {
     width: 70%;
     height: 50px;
     margin-left: 14%;
@@ -83,7 +83,7 @@ body {
     border-radius: 5%;
     background-color: #11D183;
 }
-.main .emailTip,.pwdTip {
+.login .emailTip,.pwdTip {
     margin-left: 14%;
 }
 .warning {
