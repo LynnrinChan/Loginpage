@@ -16,7 +16,7 @@
         <input type="text" placeholder="邮箱" class="input" @change="checkusername" v-model="username">
         <p class="warning" v-if="usernameerror === 1">邮箱格式错误</p>
         <input type="password" placeholder="密码" class="input" @change="checkpassword" v-model="password">
-        <p class="warning" v-if="passworderror === 1">密码格式错误，要求以字母开头，长度在6~18之间，只能包含字母、数字和下划线</p>
+        <p class="warning" v-if="passworderror === 1">密码格式错误，要求以字母开头，长度在3~20之间，只能包含字母、数字和下划线</p>
         <p class="warning" v-if="loginstatus === 0">邮箱或密码错误</p>
         <button class="forgetpassword" v-on:click="forget">忘记密码</button>
         <button class="submit" v-on:click="check">登录</button>
@@ -56,7 +56,7 @@
                     this.usernameerror=0
             },
             checkpassword: function(){
-                check = /[^[a-zA-Z]\w{5,17}$]/
+                check = /^\w{3,20}$/
                 if (!check.test(this.password))
                     this.passworderror=1
                 else
